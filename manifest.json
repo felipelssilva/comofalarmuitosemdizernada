@@ -1,0 +1,9 @@
+{
+    "name": "Como falar muito sem dizer nada",
+    "short_name": "CFMSDN",
+    "theme_color": "#728ea4",
+    "background_color": "#757763",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/"
+  }
