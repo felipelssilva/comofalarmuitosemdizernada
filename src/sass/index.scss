@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+body {
+    @media all and (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    height: 100vh;
+    width: 100vw;
+
+    .sentence {
+        -webkit-user-select: all;
+        user-select: all;
+        padding: 3rem 0;
+
+        @media all and (min-width: 425px) {
+            padding: 3rem;
+        }
+    }
+
+    .text-copied {
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        position: absolute;
+    }
+
+    .slide-top {
+        -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    .slide-out-bottom {
+        -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+        animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    }
+
+    @media all and (max-width: 425px) {
+        .buttons {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+
+            .generate {
+                flex: 6;
+                margin-right: 0 !important;
+                border-radius: 0;
+            }
+
+            .copy {
+                flex: 6;
+                border-radius: 0;
+            }
+        }
+    }
+
+    @-webkit-keyframes slide-top {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+        }
+    }
+
+    @keyframes slide-top {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+        }
+    }
+
+    @-webkit-keyframes slide-out-bottom {
+        0% {
+            -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slide-out-bottom {
+        0% {
+            -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+            opacity: 0;
+        }
+    }
+}
+
+// Import only what you need from Bulma
+@import "../../node_modules/bulma/bulma.sass";
