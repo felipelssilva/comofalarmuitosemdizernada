@@ -1,0 +1,22 @@
+{
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      ["@babel/plugin-transform-spread"],
+      ["@babel/plugin-transform-destructuring",{"useBuiltIns": true}],
+      ["@babel/plugin-transform-property-literals"],
+      ["@babel/plugin-transform-reserved-words"],
+      ["@babel/plugin-transform-property-mutators"],
+      ["@babel/plugin-transform-arrow-functions"],
+      ["@babel/plugin-transform-classes"],
+      ["@babel/plugin-transform-computed-properties"],
+      ["@babel/plugin-transform-for-of"],
+      ["@babel/plugin-transform-new-target"],
+      ["minify-dead-code-elimination", { "optimizeRawSize": true }],
+      ["minify-mangle-names"],
+      ["@babel/plugin-transform-strict-mode"],
+      ["@babel/plugin-transform-function-name"],
+      ["transform-es2015-function-name"]
+    ]
+  }
