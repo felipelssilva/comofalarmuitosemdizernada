@@ -6,7 +6,7 @@
     "watch": "gulp watch --dev && DEBUG=comofalarmuitosemdizernada:* npm start",
     "server": "node ./bin/www",
     "start": "gulp --prod && npm run server",
-    "postinstall": "npm run start"
+    "postinstall": "gulp --prod"
   },
   "dependencies": {
     "bulma": "^0.9.2",
