@@ -73,16 +73,16 @@ function getRandomInt(min, max) {
 }
 
 function generateSentence() {
-    let randFirstColumn = getRandomInt(0, _sentences.firstColumn.length)
+    let randFirstColumn = getRandomInt(0, _sentences.firstColumn.length);
     let firstColumn = _sentences.firstColumn[randFirstColumn];
 
-    let randSecondColumn = getRandomInt(0, _sentences.secondColumn.length)
+    let randSecondColumn = getRandomInt(0, _sentences.secondColumn.length);
     let secondColumn = _sentences.secondColumn[randSecondColumn];
 
-    let randThirdColumn = getRandomInt(0, _sentences.thirdColumn.length)
+    let randThirdColumn = getRandomInt(0, _sentences.thirdColumn.length);
     let thirdColumn = _sentences.thirdColumn[randThirdColumn];
 
-    let randFourthColumn = getRandomInt(0, _sentences.fourthColumn.length)
+    let randFourthColumn = getRandomInt(0, _sentences.fourthColumn.length);
     let fourthColumn = _sentences.fourthColumn[randFourthColumn];
 
     return `${firstColumn} ${secondColumn} ${thirdColumn} ${fourthColumn}`;
