@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "gulp watch --dev && DEBUG=comofalarmuitosemdizernada:* npm start",
     "server": "node ./bin/www",
-    "start": "gulp --prod",
+    "start": "gulp --prod && npm run server",
     "postinstall": "./node_modules/.bin/gulp --prod"
   },
   "dependencies": {
