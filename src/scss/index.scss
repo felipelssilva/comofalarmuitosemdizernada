@@ -27,6 +27,7 @@ $input-shadow: none;
 
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/bulma.sass";
+@import '../../node_modules/@creativebulma/bulma-collapsible/src/sass/index.sass';
 @import "./animates.scss";
 
 body {
@@ -58,20 +59,27 @@ body {
     }
 
     @media all and (max-width: 425px) {
+        .table-container {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
         .buttons {
             position: fixed;
             bottom: 0px;
             width: 100%;
+            margin: 0 !important;
+            padding: 0 !important;
 
             .generate {
                 flex: 6;
-                margin-right: 0 !important;
+                margin: 0 !important;
                 border-radius: 0;
             }
 
             .copy {
                 flex: 6;
-                margin-right: 0 !important;
+                margin: 0 !important;
                 border-radius: 0;
             }
         }
