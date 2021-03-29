@@ -1,7 +1,19 @@
 <%- include('layout/header') %>
 
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+    <section class="content">
+        <h1 class="title">
+            <%= message %>
+        </h1>
+        <p class="subtitle">
+            <%= error.status %>
+        </p>
+        <%if (!!error.stack) { %>
+            <div class="card my-6">
+                <div class="card-content">
+                    <pre><%= error.stack %></pre>
+                </div>
+            </div>
+        <% } %>
+    </section>
 
 <%- include('layout/footer') %>

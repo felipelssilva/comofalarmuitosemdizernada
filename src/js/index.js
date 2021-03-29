@@ -1,8 +1,14 @@
 let _sentences = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    getSentences();
-    listeners();
+    if (window.location.pathname == "/") {
+        getSentences();
+        listeners();
+    }
+    else if (window.location.pathname == "/about") {
+        getSentences();
+
+    }
 });
 
 function listeners() {
@@ -13,7 +19,8 @@ function listeners() {
 function generate(e) {
     e.preventDefault();
     e.stopPropagation();
-    document.querySelectorAll('.sentence')[0].innerHTML = `<h1 class="title">${generateSentence()}</h1>`;
+    let $sentence = document.querySelectorAll('.sentence');
+    generateSentence($sentence);
 }
 
 function copy(e) {
@@ -33,7 +40,7 @@ function copy(e) {
         el.classList.add('text-copied');
         el.classList.add('slide-top');
         document.querySelector('.card').appendChild(el);
-        
+
         setTimeout(() => {
             document.querySelector('.text-copied').classList.add('slide-out-bottom');
 
@@ -59,7 +66,16 @@ function getSentences() {
         .then(response => response.json())
         .then(res => {
             _sentences = res.sentences;
-            document.querySelectorAll('.sentence')[0].innerHTML = `<h1 class="title">${generateSentence()}</h1>`;
+            let $sentence = document.querySelectorAll('.sentence');
+            let $table = document.querySelectorAll('table');
+
+            if ($sentence.length > 0) {
+                generateSentence($sentence);
+            }
+
+            if ($table.length > 0) {
+                createTableResults($table);
+            }
         })
         .catch(err => {
             console.log(err);
@@ -72,7 +88,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateSentence() {
+function generateSentence($sentence) {
     let randFirstColumn = getRandomInt(0, _sentences.firstColumn.length);
     let firstColumn = _sentences.firstColumn[randFirstColumn];
 
@@ -85,5 +101,45 @@ function generateSentence() {
     let randFourthColumn = getRandomInt(0, _sentences.fourthColumn.length);
     let fourthColumn = _sentences.fourthColumn[randFourthColumn];
 
-    return `${firstColumn} ${secondColumn} ${thirdColumn} ${fourthColumn}`;
+    $sentence[0].innerHTML = `<h1 class="title">${firstColumn} ${secondColumn} ${thirdColumn} ${fourthColumn}</h1>`;
+}
+
+function createTableResults($table) {
+    $table[0].tBodies[0].innerHTML = '';
+
+   /* Object.values(_sentences).map((e, i) => {
+        e.map((el, j) => {
+            let row = '';
+            let cel = '';
+
+            if (i == 0) {
+                row = $table[0].tBodies[0].insertRow();
+            } else {
+                row = $table[0].tBodies[0].children[i];
+            }
+            cel = row.insertCell();
+            cel.innerHTML = el;
+        });
+    });*/
+
+    _sentences.firstColumn.map((e, i) => {
+        let row = $table[0].tBodies[0].insertRow();
+        let cel = row.insertCell();
+        cel.innerHTML = e;
+    });
+
+    _sentences.secondColumn.map((e, i) => {
+        let cel = $table[0].tBodies[0].children[i].insertCell();
+        cel.innerHTML = e;
+    });
+
+    _sentences.thirdColumn.map((e, i) => {
+        let cel = $table[0].tBodies[0].children[i].insertCell();
+        cel.innerHTML = e;
+    });
+    
+    _sentences.fourthColumn.map((e, i) => {
+        let cel = $table[0].tBodies[0].children[i].insertCell();
+        cel.innerHTML = e;
+    });
 }
