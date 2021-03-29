@@ -21,6 +21,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function (req, res, next) {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self'; script-src 'self' http://*.cloudflare.com https://*.cloudflare.com https://*.googletagmanager.com http://*.googletagmanager.com http://www.google-analytics.com https://www.google-analytics.com 'sha256-pJEhyMwHnQgq/GwS0H+l4Ite/VKvauHb45gCsBWgPHA='; connect-src 'self' http://www.google-analytics.com https://www.google-analytics.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com http://fonts.gstatic.com/; img-src 'self'; style-src 'self' https://fonts.googleapis.com http://fonts.googleapis.com  http://*.cloudflare.com https://*.cloudflare.com ; frame-src 'self';",
+  );
+  next();
+});
+
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
