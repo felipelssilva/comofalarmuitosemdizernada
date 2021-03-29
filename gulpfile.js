@@ -6,6 +6,7 @@ const concat = require("gulp-concat");
 const jshint = require('gulp-jshint');
 const uglify = require('gulp-uglify');
 const minify = require('gulp-minify');
+const debug = require('gulp-debug');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
@@ -21,7 +22,7 @@ function js(callback) {
 
     if (process.argv[3] === '--dev') {
         return src('src/js/**/*.js', { ignoreInitial: false })
-            .pipe(jshint({ esversion: 9 }))
+        .pipe(jshint({ esversion: 9 }))
             .pipe(jshint.reporter('default', { verbose: true }))
             .pipe(sourcemaps.init())
             .pipe(babel())
@@ -52,6 +53,20 @@ function css(callback) {
     }
 }
 
+function images(callback) {
+    callback();
+    return src(['src/imgs/**/*.{png,jpg,gif,svg,ico}'])
+        .pipe(debug())
+        .pipe(dest('public/imgs'));
+}
+
+function cpFiles(callback) {
+    callback();
+    return src(['src/*.{json,txt,xml}'])
+        .pipe(debug())
+        .pipe(dest('public/'));
+}
+
 function watcherCss(callback) {
     callback();
     return watch('src/scss/**/*', { ignoreInitial: false }, series(css));
@@ -62,5 +77,16 @@ function watcherJs(callback) {
     return watch('src/js/**/*', { ignoreInitial: false }, series(js));
 }
 
-exports.watch = series(clean, watcherJs, watcherCss);
-exports.default = series(clean, js, css);
+function watcherImages(callback) {
+    callback();
+    return watch(['src/imgs/**/*.{png,jpg,gif,svg,ico}'], { ignoreInitial: false }, series(images));
+}
+
+function watcherFiles(callback) {
+    callback();
+    return watch(['src/*.{json,txt,xml}'], { ignoreInitial: false }, series(cpFiles));
+
+}
+
+exports.watch = series(clean, watcherJs, watcherCss, watcherImages, watcherFiles);
+exports.default = series(clean, js, css, images, cpFiles);

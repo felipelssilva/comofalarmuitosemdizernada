@@ -1,10 +1,5 @@
 let _sentences = [];
 
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag('js', new Date());
-gtag('config', 'G-0P6S1WF939');
-
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname == "/") {
         getSentences();
