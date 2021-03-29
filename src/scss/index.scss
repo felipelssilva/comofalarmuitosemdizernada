@@ -25,11 +25,16 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+// Import only what you need from Bulma
+@import "../../node_modules/bulma/bulma.sass";
+@import "./animates.scss";
+
 body {
     @media all and (min-width: 768px) {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
     }
 
     height: 100vh;
@@ -52,16 +57,6 @@ body {
         position: absolute;
     }
 
-    .slide-top {
-        -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    }
-
-    .slide-out-bottom {
-        -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-        animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-    }
-
     @media all and (max-width: 425px) {
         .buttons {
             position: fixed;
@@ -76,63 +71,13 @@ body {
 
             .copy {
                 flex: 6;
+                margin-right: 0 !important;
                 border-radius: 0;
             }
         }
     }
 
-    @-webkit-keyframes slide-top {
-        0% {
-            opacity: 0;
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-        }
-        100% {
-            opacity: 1;
-            -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-        }
-    }
-
-    @keyframes slide-top {
-        0% {
-            opacity: 0;
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-        }
-        100% {
-            opacity: 1;
-            -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-        }
-    }
-
-    @-webkit-keyframes slide-out-bottom {
-        0% {
-            -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-            opacity: 1;
-        }
-        100% {
-            -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-            opacity: 0;
-        }
-    }
-
-    @keyframes slide-out-bottom {
-        0% {
-            -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-            opacity: 1;
-        }
-        100% {
-            -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-            opacity: 0;
-        }
+    .tabs {
+        flex-basis: 100%;
     }
 }
-
-// Import only what you need from Bulma
-@import "../../node_modules/bulma/bulma.sass";

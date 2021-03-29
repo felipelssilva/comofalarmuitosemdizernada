@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET home page */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Como falar muito sem dizer nada' });
+  res.render('index', { title: 'Início - Gerador de: Como falar muito sem dizer nada', url: req.url });
 });
 
+/* GET sentences */
 router.get('/sentences', function(req, res) {
   const sentences = {
     firstColumn: [

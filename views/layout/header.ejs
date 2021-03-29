@@ -11,8 +11,9 @@
   <title>
     <%= title %>
   </title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src http:; child-src http:; object-src http:;">
+
   <link rel="stylesheet" href="/css/bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
 
@@ -32,3 +33,20 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+  <!-- div class="tabs">
+    <ul>
+      <li <% if ( url == '/' ) { %> class="is-active" <% } %> >
+        <a href="/">
+          <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span> 
+          Início
+        </a>
+      </li>
+      <li <% if ( url == '/about' ) { %> class="is-active" <% } %> >
+        <a href="/about">
+          <span class="icon is-small"><i class="fas fa-align-left"></i></span>
+          Sobre
+        </a>
+      </li>
+    </ul>
+  </div-->

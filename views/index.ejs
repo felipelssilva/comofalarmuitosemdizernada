@@ -1,28 +1,63 @@
 <%- include('layout/header') %>
 
-  <div class="mt-6 mb-6 container is-max-desktop has-text-centered">
+  <section class="content mt-6 mb-6 container is-max-desktop">
+    <div class="has-text-centered">
 
-    <h1 class="title">
-      Como falar muito sem dizer nada
-    </h1>
-
-    <p class="subtitle">
-      Clique no botão abaixo para gerar outra frase.
-    </p>
+      <h1 class="title">
+        Como falar muito sem dizer nada
+      </h1>
+    </div>
 
     <div class="card my-6">
       <div class="card-content">
-        <div class="sentence" tabindex="0">
+        <p>
+          Essa tabela permite fazer mais de <strong>10 mil</strong> combinações de frases onde você poderá fazer grandes
+          discursos sem
+          dizer praticamente <strong>NADA</strong>!
+        </p>
+
+        <hr>
+
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Frase 1</th>
+              <th>Frase 2</th>
+              <th>Frase 3</th>
+              <th>Frase 4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" class="p-5 has-text-centered">
+                <i class="fa-3x fas fa-circle-notch fa-spin"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+    <div class="has-text-centered">
+      <p class="subtitle">
+        Clique no botão abaixo para gerar uma frase.
+      </p>
+    </div>
+
+    <div class="card my-6">
+      <div class="card-content">
+        <div class="sentence has-text-centered" tabindex="0">
           <i class="fa-3x fas fa-circle-notch fa-spin"></i>
         </div>
       </div>
     </div>
 
     <div class="buttons are-medium is-justify-content-center">
-      <a class="button is-primary generate">Gerar&nbsp;<i class="fas fa-plus"></i></a>
       <a class="button is-secondary copy">Copiar&nbsp;<i class="fas fa-copy"></i></a>
+      <a class="button is-primary generate">Gerar&nbsp;<i class="fas fa-plus"></i></a>
     </div>
 
-  </div>
+  </section>
 
   <%- include('layout/footer') %>
