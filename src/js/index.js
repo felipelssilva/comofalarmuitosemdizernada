@@ -1,5 +1,10 @@
 let _sentences = [];
 
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-0P6S1WF939');
+
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname == "/") {
         getSentences();
@@ -39,7 +44,7 @@ function copy(e) {
         el.textContent = 'copiado';
         el.classList.add('text-copied');
         el.classList.add('slide-top');
-        document.querySelector('.card').appendChild(el);
+        document.querySelector('.card-sentence').prepend(el);
 
         setTimeout(() => {
             document.querySelector('.text-copied').classList.add('slide-out-bottom');
@@ -107,20 +112,20 @@ function generateSentence($sentence) {
 function createTableResults($table) {
     $table[0].tBodies[0].innerHTML = '';
 
-   /* Object.values(_sentences).map((e, i) => {
-        e.map((el, j) => {
-            let row = '';
-            let cel = '';
-
-            if (i == 0) {
-                row = $table[0].tBodies[0].insertRow();
-            } else {
-                row = $table[0].tBodies[0].children[i];
-            }
-            cel = row.insertCell();
-            cel.innerHTML = el;
-        });
-    });*/
+    /* Object.values(_sentences).map((e, i) => {
+         e.map((el, j) => {
+             let row = '';
+             let cel = '';
+ 
+             if (i == 0) {
+                 row = $table[0].tBodies[0].insertRow();
+             } else {
+                 row = $table[0].tBodies[0].children[i];
+             }
+             cel = row.insertCell();
+             cel.innerHTML = el;
+         });
+     });*/
 
     _sentences.firstColumn.map((e, i) => {
         let row = $table[0].tBodies[0].insertRow();
@@ -137,7 +142,7 @@ function createTableResults($table) {
         let cel = $table[0].tBodies[0].children[i].insertCell();
         cel.innerHTML = e;
     });
-    
+
     _sentences.fourthColumn.map((e, i) => {
         let cel = $table[0].tBodies[0].children[i].insertCell();
         cel.innerHTML = e;
