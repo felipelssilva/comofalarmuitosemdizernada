@@ -1,13 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
 
 /* GET home page */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Início - Gerador de: Como falar muito sem dizer nada', url: req.url });
+router.get('/', function (req, res, next) {
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+
+  request
+    .get(fullUrl + 'sentences', (error, response) => {
+      if (error) {
+        return
+      } else if (response.statusCode === 200) {
+        res.render('index', { title: 'Início - Gerador de: Como falar muito sem dizer nada', url: req.url, table: JSON.parse(response.body).sentences });
+      }
+    });
 });
 
 /* GET sentences */
-router.get('/sentences', function(req, res) {
+router.get('/sentences', function (req, res) {
   const sentences = {
     firstColumn: [
       'Caros colegas,',
