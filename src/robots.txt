@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://comofalarmuitosemdizernada.herokuapp.com//sitemap.xml
+Sitemap: https://comofalarmuitosemdizernada.herokuapp.com/sitemap.xml
