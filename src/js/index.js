@@ -74,7 +74,7 @@ function getSentences() {
             }
 
             if ($table.length > 0) {
-                //createTableResults($table);
+                createTableResults($table);
             }
         })
         .catch(err => {
