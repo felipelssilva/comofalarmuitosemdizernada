@@ -4,10 +4,10 @@ var request = require('request');
 
 /* GET home page */
 router.get('/', function (req, res, next) {
-  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  const fullUrl = req.protocol + '://' + req.get('host');
 
   request
-    .get(fullUrl + 'sentences', (error, response) => {
+    .get(fullUrl + '/sentences', (error, response) => {
       if (error) {
         return
       } else if (response.statusCode === 200) {
