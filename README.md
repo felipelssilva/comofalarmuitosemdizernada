@@ -84,4 +84,4 @@ Uma licença permissiva curta e simples com condições exigindo apenas a preser
 
 Baseado em uma necessidade.
 
-Mantido por [Felipe Luis](https://www.felipeluis.com).
+Mantido por [Felipe Luis](https://www.felipeluis.com.br).
