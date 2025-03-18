@@ -14,8 +14,8 @@
     "cors": "^2.8.5",
     "csp-header": "^2.2.0",
     "debug": "~2.6.9",
-    "ejs": "^3.1.6",
-    "express": "~4.16.1",
+    "ejs": "^3.1.10",
+    "express": "~4.20.0",
     "gulp-concat": "^2.6.1",
     "gulp-uglify": "^3.0.2",
     "helmet": "^4.4.1",
@@ -50,11 +50,11 @@
     "gulp-debug": "^4.0.0",
     "gulp-jshint": "^2.1.0",
     "gulp-minify": "^3.1.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-watch": "^5.0.1",
-    "jshint": "^2.11.0",
+    "jshint": "^2.13.6",
     "node-sass": "^9.0.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^3.1.9"
   }
 }
