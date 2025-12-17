@@ -45,7 +45,7 @@
     "babel-plugin-minify-mangle-names": "^0.5.1",
     "babel-plugin-transform-es2015-function-name": "^6.24.1",
     "del": "^5.1.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0-beta.2",
     "gulp-debug": "^5.0.1",
     "gulp-jshint": "^2.1.0",
