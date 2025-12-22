@@ -28,7 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-arrow-functions": "^7.25.9",
-    "@babel/plugin-transform-classes": "^7.9.5",
+    "@babel/plugin-transform-classes": "^7.28.4",
     "@babel/plugin-transform-computed-properties": "^7.27.1",
     "@babel/plugin-transform-destructuring": "^7.25.9",
     "@babel/plugin-transform-for-of": "^7.27.1",
