@@ -39,7 +39,7 @@
     "@babel/plugin-transform-reserved-words": "^7.27.1",
     "@babel/plugin-transform-spread": "^7.8.3",
     "@babel/plugin-transform-strict-mode": "^7.8.3",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-env": "^7.28.5",
     "@creativebulma/bulma-collapsible": "^1.0.4",
     "babel-plugin-minify-dead-code-elimination": "^0.5.1",
     "babel-plugin-minify-mangle-names": "^0.5.1",
