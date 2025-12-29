@@ -55,6 +55,6 @@
     "gulp-watch": "^5.0.1",
     "jshint": "^2.13.6",
     "node-sass": "^9.0.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.11"
   }
 }
